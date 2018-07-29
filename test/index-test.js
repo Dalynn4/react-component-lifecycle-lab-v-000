@@ -61,10 +61,5 @@ describe('TweetWall', () => {
     expect(wrapper.state()).deep.equal({ tweets: ['I am also a tweet!', 'I am a tweet!'] });
   });
 
-  it('does not rerender when there are no new tweets', () => {
-    const spy = sinon.spy(TweetWall.prototype, 'render')
-    const wrapper = shallow(<TweetWall newTweets={[]}  />);
-    wrapper.setProps({ newTweets: [] });
-    expect(spy).to.have.property('callCount', 1)
-  });
+
 });
